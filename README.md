@@ -35,6 +35,7 @@ Upcoming:
 
 ## Project Structure
 
+```
 enterprise-deployment-platform/
 │
 ├── terraform/
@@ -49,7 +50,7 @@ enterprise-deployment-platform/
 ├── ansible/
 ├── github-actions/
 └── docs/
-
+```
 ---
 
 ## Key Features

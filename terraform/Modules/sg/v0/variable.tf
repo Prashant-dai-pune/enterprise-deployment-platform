@@ -1,19 +1,19 @@
 variable "vpc_id" {
-   //default = "vpc-5f680722"
-   type = string
+  //default = "vpc-5f680722"
+  type = string
 }
 
 variable "sg_name" {
-   //default = "vpc-5f680722"
-   type = string
+  //default = "vpc-5f680722"
+  type = string
 }
 variable "env" {
-   //default = "vpc-5f680722"
-   type = string
+  //default = "vpc-5f680722"
+  type = string
 }
 variable "co_name" {
-   //default = "vpc-5f680722"
-   type = string
+  //default = "vpc-5f680722"
+  type = string
 }
 locals {
   tags = {

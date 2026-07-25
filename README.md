@@ -1,92 +1,91 @@
 # Enterprise Deployment Platform
+## Progress
+
+- [x] Terraform Project Structure
+- [x] Reusable Modules
+- [x] EC2 Deployment for App1
+- [ ] Security Groups
+- [ ] ALB
+- [ ] Auto Scaling Group
+- [ ] GitHub Actions
+- [ ] Ansible
+- [ ] React Portal
+- [ ] FastAPI Backend
+- [ ] Kubernetes
+
 
 ## Overview
 
-The Enterprise Deployment Platform is a self-service infrastructure automation platform that enables developers to provision and deploy application infrastructure on AWS with minimal manual intervention.
+Enterprise Deployment Platform is a modular Infrastructure as Code (IaC) project that aims to provide a self-service deployment platform for AWS infrastructure.
 
-The platform follows Infrastructure as Code (IaC) principles using Terraform and is designed with reusable modules, environment isolation, and automated deployment workflows. It aims to reduce manual effort, improve consistency across environments, and provide a scalable foundation for enterprise deployments.
+The project follows Terraform best practices by separating reusable modules, application configurations, and environment-specific settings. The long-term vision is to extend the platform with CI/CD, Ansible, Kubernetes, and a self-service developer portal.
 
 ---
 
-## Current Phase
+## Current Status
 
-Phase 1 – Infrastructure Foundation
+### ✅ Completed
 
-The current implementation focuses on building the Terraform framework for managing AWS infrastructure.
-
-Implemented:
+- Modular Terraform project structure
 - Reusable Terraform modules
-- Multi-environment support (Dev, Stage, Prod)
-- Remote state management
-- Backend configuration
-- Environment-specific variables
-- Modular application structure
+- Application-based deployment architecture
+- Environment-specific configuration
+- Remote state support
+- Successfully provisioned EC2 instance for **App1** using the modular Terraform framework
 
-Upcoming:
-- GitHub Actions CI/CD
-- FastAPI Backend
+### 🚧 In Progress
+
+- Security Groups
+- Application Load Balancer (ALB)
+- Auto Scaling Group (ASG)
+- GitHub Actions Integration
+- Ansible Automation
+
+### 📅 Planned
+
 - React Self-Service Portal
-- Ansible Integration
-- Live Deployment Logs
-- Kubernetes Support
-- AI-assisted deployment analysis
+- FastAPI Backend
+- Kubernetes Integration
+- AI-assisted Deployment Analysis
+- Cost Optimization Dashboard
 
 ---
 
 ## Project Structure
 
+```text
+terraform/
+├── applications/
+│   └── app1/
+├── modules/
+│   ├── ec2/
+│   ├── vpc/
+│   ├── security-group/
+│   └── alb/
+├── environments/
+│   ├── dev/
+│   ├── stage/
+│   └── prod/
+└── scripts/
 ```
-enterprise-deployment-platform/
-│
-├── terraform/
-│   ├── applications/
-│   ├── modules/
-│   ├── environments/
-│   ├── scripts/
-│   └── backend/
-│
-├── backend/
-├── frontend/
-├── ansible/
-├── github-actions/
-└── docs/
-```
+
 ---
 
-## Key Features
+## Current Achievement
 
-- Infrastructure as Code using Terraform
-- Reusable module-based architecture
-- Environment isolation
-- Remote Terraform state
-- Automated infrastructure provisioning
-- Enterprise-ready folder structure
-- Easy extensibility for new applications
+The current implementation validates the project architecture by successfully deploying an EC2 instance for **App1** through reusable Terraform modules. This demonstrates that the application-based structure, module design, and environment configuration are functioning as intended.
 
 ---
 
 ## Technology Stack
 
-- AWS
 - Terraform
-- GitHub Actions (Planned)
-- FastAPI (Planned)
-- React (Planned)
-- Ansible (Planned)
-- Docker
-- Kubernetes (Planned)
+- AWS
+- GitHub (Source Control)
 
----
-
-## Project Roadmap
-
-- [x] Terraform Foundation
-- [ ] GitHub Actions
-- [ ] FastAPI Backend
-- [ ] React Portal
-- [ ] Deployment Automation
-- [ ] Kubernetes Integration
-- [ ] AI Deployment Assistant
-
----
-
+Future additions:
+- GitHub Actions
+- Ansible
+- FastAPI
+- React
+- Kubernetes

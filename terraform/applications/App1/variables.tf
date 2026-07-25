@@ -7,7 +7,7 @@ variable "instance_type" {
   description = "The type of instance to start"
   type        = map(any)
   default = {
-    dev-app1 = "t2.micro",
+    dev-app1 = "t3.micro",
     stg-app1 = "t2.micro",
     prd-app1 = "t2.micro"
   }

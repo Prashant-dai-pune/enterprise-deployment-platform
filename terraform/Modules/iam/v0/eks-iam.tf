@@ -16,7 +16,7 @@ resource "aws_iam_role" "master" {
   ]
 }
 POLICY
-    tags = merge(
+  tags = merge(
     local.tags,
     {
       "Name" = "${var.co_name}-${var.env}-${var.master_role_name}"
@@ -58,7 +58,7 @@ resource "aws_iam_role" "worker" {
   ]
 }
 POLICY
-    tags = merge(
+  tags = merge(
     local.tags,
     {
       "Name" = "${var.co_name}-${var.env}-${var.worker_role_name}"
@@ -68,7 +68,7 @@ POLICY
 }
 
 resource "aws_iam_policy" "autoscaler" {
-  name   = "${var.co_name}-${var.env}-${var.policy_name}"
+  name = "${var.co_name}-${var.env}-${var.policy_name}"
 
   policy = <<EOF
 {
@@ -131,5 +131,5 @@ resource "aws_iam_instance_profile" "worker" {
   depends_on = [aws_iam_role.worker]
   name       = "${var.co_name}-${var.env}-${var.instance_profile_name}"
 
-  role       = aws_iam_role.worker.name
+  role = aws_iam_role.worker.name
 }

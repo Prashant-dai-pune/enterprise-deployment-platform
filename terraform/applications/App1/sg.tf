@@ -1,15 +1,24 @@
+module "app1_sg" {
+  source  = "../../modules/sg/v1"
+  vpc_id  = var.vpc_id
+  sg_name = "${var.app_name}-sg"
+  env     = var.env
+  co_name = var.co_name
 
-/*
-module "eks-sgs" {
-    source     = "../../modules/sg/v0"
-    vpc_id     = var.vpc_id
-    sg_name    = "${var.project_name}-${var.unique_id}-sg"
-    env        = var.env
-    co_name    = var.co_name
-  }
-  */
-
-
-
-
-  
+  ingress_rules = [
+    {
+      description = "SSH"
+      from_port   = 22
+      to_port     = 22
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    },
+    {
+      description = "HTTP"
+      from_port   = 80
+      to_port     = 80
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
+  ]
+}

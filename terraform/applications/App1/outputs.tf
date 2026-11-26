@@ -1,9 +1,9 @@
 output "alb_dns_name" {
   description = "DNS name for the App1 load balancer."
-  value       = module.alb.alb_dns_name
+  value       = var.instance_count > 0 ? module.alb[0].alb_dns_name : null
 }
 
 output "app_url" {
   description = "HTTP URL for App1."
-  value       = "http://${module.alb.alb_dns_name}"
+  value       = var.instance_count > 0 ? "http://${module.alb[0].alb_dns_name}" : null
 }

@@ -4,6 +4,6 @@ vpc_id = null
 
 applications = {
   app1 = {
-    instance_count = 1
+    instance_count = 2
   }
 }

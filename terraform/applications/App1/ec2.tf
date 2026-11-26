@@ -3,9 +3,9 @@ module "app1_ec2" {
   env                    = var.env
   instance_count         = var.instance_count
   instance_type          = var.instance_type["${var.env}-${var.app_name}"]
-  subnet_id              = sort(data.aws_subnets.public.ids)[0]
+  subnet_id              = var.instance_count > 0 ? sort(data.aws_subnets.public[0].ids)[0] : null
   key_name               = var.key_name
-  vpc_security_group_ids = [module.app1_sg.security_group_id]
+  vpc_security_group_ids = var.instance_count > 0 ? [module.app1_sg[0].security_group_id] : []
   unique_id              = var.app_name
   user_data              = <<-EOF
     #!/bin/bash

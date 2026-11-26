@@ -22,11 +22,12 @@ variable "co_name" {
 variable "ingress_rules" {
   description = "Ingress rules for the security group."
   type = list(object({
-    description = string
-    from_port   = number
-    to_port     = number
-    protocol    = string
-    cidr_blocks = list(string)
+    description              = string
+    from_port                = number
+    to_port                  = number
+    protocol                 = string
+    cidr_blocks              = list(string)
+    source_security_group_id = optional(string)
   }))
   default = [
     {

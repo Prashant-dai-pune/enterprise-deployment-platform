@@ -1,4 +1,5 @@
 module "app1_sg" {
+  count   = var.instance_count > 0 ? 1 : 0
   source  = "../../modules/sg/v1"
   vpc_id  = local.selected_vpc_id
   sg_name = "${var.app_name}-sg"
@@ -12,12 +13,13 @@ module "app1_sg" {
       to_port                  = 80
       protocol                 = "tcp"
       cidr_blocks              = []
-      source_security_group_id = module.alb_sg.security_group_id
+      source_security_group_id = module.alb_sg[0].security_group_id
     }
   ]
 }
 
 module "alb_sg" {
+  count = var.instance_count > 0 ? 1 : 0
 
   source = "../../modules/sg/v1"
 

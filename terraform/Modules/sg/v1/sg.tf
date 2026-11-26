@@ -7,12 +7,12 @@ resource "aws_security_group" "security_group" {
     for_each = var.ingress_rules
 
     content {
-      description = ingress.value.description
-      from_port   = ingress.value.from_port
-      to_port     = ingress.value.to_port
-      protocol    = ingress.value.protocol
-      cidr_blocks = ingress.value.cidr_blocks
-      security_groups  = ingress.value.source_security_group_id == null ? null : [ingress.value.source_security_group_id]
+      description     = ingress.value.description
+      from_port       = ingress.value.from_port
+      to_port         = ingress.value.to_port
+      protocol        = ingress.value.protocol
+      cidr_blocks     = ingress.value.cidr_blocks
+      security_groups = ingress.value.source_security_group_id == null ? null : [ingress.value.source_security_group_id]
     }
   }
 

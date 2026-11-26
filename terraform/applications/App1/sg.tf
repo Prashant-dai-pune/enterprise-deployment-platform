@@ -14,11 +14,11 @@ module "app1_sg" {
       cidr_blocks = ["0.0.0.0/0"]
     },
     {
-      description = "HTTP"
-      from_port   = 80
-      to_port     = 80
-      protocol    = "tcp"
-      cidr_blocks = []
+      description              = "HTTP"
+      from_port                = 80
+      to_port                  = 80
+      protocol                 = "tcp"
+      cidr_blocks              = []
       source_security_group_id = module.alb_sg.security_group_id
     }
   ]
@@ -31,7 +31,7 @@ module "alb_sg" {
   co_name = var.co_name
   env     = var.env
 
-  vpc_id  = data.aws_vpc.selected.id
+  vpc_id  = local.selected_vpc_id
   sg_name = "app1-alb-sg"
 
   ingress_rules = [

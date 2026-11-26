@@ -17,6 +17,3 @@ data "aws_ami" "amazon_linux" {
     values = ["x86_64"]
   }
 }
-data "aws_key_pair" "ssh_key" {
-  key_name = "dipmaha1"
-}

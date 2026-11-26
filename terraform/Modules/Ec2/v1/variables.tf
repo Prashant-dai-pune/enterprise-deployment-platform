@@ -19,6 +19,11 @@ variable "vpc_security_group_ids" {
   type        = list(string)
   default     = null
 }
+variable "subnet_id" {
+  description = "Subnet where the instance will be launched."
+  type        = string
+  default     = null
+}
 variable "key_name" {
   description = "Key name of the Key Pair to use for the instance; which can be managed using the `aws_key_pair` resource"
   type        = string

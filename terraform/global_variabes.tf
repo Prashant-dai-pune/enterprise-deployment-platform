@@ -25,6 +25,7 @@ variable "applications" {
 
   type = map(object({
     instance_type     = string
+    subnet_ids        = list(string)
     min_size          = number
     desired_capacity  = number
     max_size          = number

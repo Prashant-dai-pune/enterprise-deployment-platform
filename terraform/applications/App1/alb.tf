@@ -8,7 +8,7 @@ module "alb" {
   env     = var.env
   vpc_id  = local.selected_vpc_id
 
-  subnet_ids = data.aws_subnets.public[0].ids
+  subnet_ids = var.subnet_ids #data.aws_subnets.public[0].ids
 
   security_group_ids = [module.alb_sg[0].security_group_id]
 

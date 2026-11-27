@@ -1,6 +1,6 @@
 module "app1_sg" {
   count   = var.instance_count > 0 ? 1 : 0
-  source  = "../../modules/sg/v1"
+  source  = "../../Modules/sg/v1"
   vpc_id  = local.selected_vpc_id
   sg_name = "${var.app_name}-sg"
   env     = var.env

@@ -1,7 +1,7 @@
 module "alb" {
   count = var.instance_count > 0 ? 1 : 0
 
-  source = "../../modules/alb/v1"
+  source = "../../Modules/alb/v1"
 
   name    = "app1-alb"
   co_name = var.co_name

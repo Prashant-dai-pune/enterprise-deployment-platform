@@ -1,6 +1,6 @@
 /*
 module "eks-iam" {
-    source = "../../modules/iam/v0"
+    source = "../../Modules/iam/v0"
     vpc_id                 = var.vpc_id
     env                    = var.env
     co_name                = var.co_name

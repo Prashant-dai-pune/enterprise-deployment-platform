@@ -1,5 +1,6 @@
 # Common variables per env
 env    = "stg"
+region = "us-east-1"
 vpc_id = null
 
 applications = {

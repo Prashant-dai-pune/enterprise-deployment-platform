@@ -9,6 +9,12 @@ variable "co_name" {
   type        = string
   default     = "ftech"
 }
+
+variable "region" {
+  description = "AWS region used by the provider."
+  type        = string
+  default     = "us-east-1"
+}
 variable "subnet_ids" {
   description = "Subnet IDs for ASG instances. Leave empty to use all subnets in the selected VPC."
   type        = list(string)

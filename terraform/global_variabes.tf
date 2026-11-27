@@ -9,7 +9,11 @@ variable "co_name" {
   type        = string
   default     = "ftech"
 }
-
+variable "subnet_ids" {
+  description = "Subnet IDs for ASG instances. Leave empty to use all subnets in the selected VPC."
+  type        = list(string)
+  default     = []
+}
 variable "vpc_id" {
   description = "VPC ID where application resources will be created. Leave null to use the AWS default VPC."
   type        = string

@@ -9,7 +9,11 @@ variable "instance_type" {
   type        = string
   default     = "t3.micro"
 }
-
+variable "subnet_ids" {
+  description = "Subnet IDs for ASG instances. Leave empty to use all subnets in the selected VPC."
+  type        = list(string)
+  default     = []
+}
 variable "asg_min_size" {
   description = "Minimum number of App1 instances."
   type        = number

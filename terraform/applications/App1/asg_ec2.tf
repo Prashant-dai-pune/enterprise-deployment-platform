@@ -13,7 +13,7 @@ module "app1_asg" {
   desired_capacity       = var.asg_desired_capacity
   max_size               = var.asg_max_size
   health_check_type      = "ELB"
-  subnet_ids             = ["subnet-0478eb5f56ba85cb0", "subnet-09ba124f39acaaa99"]#sort(data.aws_subnets.public[0].ids)
+  subnet_ids             = var.subnet_ids #sort(data.aws_subnets.public[0].ids)
   vpc_security_group_ids = [module.app1_sg[0].security_group_id]
   target_group_arns      = [module.alb[0].target_group_arn]
   key_name               = var.key_name

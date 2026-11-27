@@ -58,10 +58,11 @@ plan)
 
     terraform fmt -recursive
 
-    terraform validate
     terraform init \
         -input=false \
         -backend-config="$BACKEND_CONFIG"
+
+    terraform validate
 
     terraform plan \
         -input=false \
@@ -74,6 +75,8 @@ apply)
     terraform init \
         -input=false \
         -backend-config="$BACKEND_CONFIG"
+
+    terraform validate
 
     terraform apply \
         -input=false \

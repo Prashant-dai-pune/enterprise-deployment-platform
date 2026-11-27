@@ -1,5 +1,5 @@
 module "app1_ec2" {
-  source                 = "../../modules/Ec2/v1"
+  source                 = "../../modules/ec2/v1"
   env                    = var.env
   instance_count         = var.instance_count
   instance_type          = var.instance_type["${var.env}-${var.app_name}"]

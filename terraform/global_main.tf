@@ -4,7 +4,7 @@ module "app1" {
   env            = var.env
   co_name        = var.co_name
   vpc_id         = var.vpc_id
-  subnet_ids     = var.subnet_ids
+  subnet_ids     = var.applications["app1"].var.subnet_ids
   instance_type          = var.applications["app1"].instance_type
   asg_min_size           = var.applications["app1"].min_size
   asg_desired_capacity   = var.applications["app1"].desired_capacity

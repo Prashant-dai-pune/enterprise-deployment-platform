@@ -3,6 +3,21 @@ variable "ami" {
   type        = string
   default     = null
 }
+variable "instance_count" {
+  description = "Number of EC2 instances to create"
+  type        = number
+  default     = 1
+}
+variable "subnet_ids" {
+  description = "Subnet IDs in which to launch instances"
+  type        = list(string)
+  default     = []
+}
+variable "unique_id" {
+  description = "Application identifier used in the instance Name tag"
+  type        = string
+  default     = null
+}
 variable "instance_type" {
   description = "The type of instance to start"
   type        = string

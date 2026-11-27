@@ -16,7 +16,7 @@ locals {
 
 resource "aws_launch_template" "this" {
   name_prefix            = "${local.resource_name}-"
-  image_id               = data.aws_ami.amazon_linux.id
+  image_id               = var.ami
   instance_type          = var.instance_type
   key_name               = var.key_name
   vpc_security_group_ids = var.vpc_security_group_ids

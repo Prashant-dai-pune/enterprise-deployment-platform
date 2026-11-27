@@ -1,5 +1,5 @@
 module "alb" {
-  count = var.instance_count > 0 ? 1 : 0
+  count = var.asg_max_size > 0 ? 1 : 0
 
   source = "../../Modules/alb/v1"
 
@@ -12,12 +12,6 @@ module "alb" {
 
   security_group_ids = [module.alb_sg[0].security_group_id]
 
-  #target_group_port     = 80
-  #target_group_protocol = "HTTP"
-
-  #listener_port     = 80
-  #listener_protocol = "HTTP"
-
   health_check_path = "/"
 
   tags = {
@@ -26,11 +20,4 @@ module "alb" {
     Application = "app1"
     ManagedBy   = "Terraform"
   }
-}
-
-resource "aws_lb_target_group_attachment" "app1" {
-  count            = var.instance_count
-  target_group_arn = module.alb[0].target_group_arn
-  target_id        = module.app1_ec2.instance_ids[count.index]
-  port             = 80
 }

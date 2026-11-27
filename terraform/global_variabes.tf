@@ -20,6 +20,9 @@ variable "applications" {
   description = "Application deployment configuration"
 
   type = map(object({
-    instance_count = number
+    instance_type     = string
+    min_size          = number
+    desired_capacity  = number
+    max_size          = number
   }))
 }

@@ -1,5 +1,5 @@
 module "app1_sg" {
-  count   = var.instance_count > 0 ? 1 : 0
+  count   = var.asg_max_size > 0 ? 1 : 0
   source  = "../../Modules/sg/v1"
   vpc_id  = local.selected_vpc_id
   sg_name = "${var.app_name}-sg"
@@ -19,9 +19,9 @@ module "app1_sg" {
 }
 
 module "alb_sg" {
-  count = var.instance_count > 0 ? 1 : 0
+  count = var.asg_max_size > 0 ? 1 : 0
 
-  source = "../../modules/sg/v1"
+  source = "../../Modules/sg/v1"
 
   co_name = var.co_name
   env     = var.env

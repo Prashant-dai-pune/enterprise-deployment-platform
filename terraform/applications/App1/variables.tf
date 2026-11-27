@@ -5,13 +5,27 @@ variable "ami" {
 }
 
 variable "instance_type" {
-  description = "The type of instance to start"
-  type        = map(string)
-  default = {
-    dev-app1 = "t3.micro"
-    stg-app1 = "t3.micro"
-    prd-app1 = "t3.micro"
-  }
+  description = "The EC2 instance type used by App1's ASG launch template."
+  type        = string
+  default     = "t3.micro"
+}
+
+variable "asg_min_size" {
+  description = "Minimum number of App1 instances."
+  type        = number
+  default     = 1
+}
+
+variable "asg_desired_capacity" {
+  description = "Desired number of App1 instances."
+  type        = number
+  default     = 2
+}
+
+variable "asg_max_size" {
+  description = "Maximum number of App1 instances."
+  type        = number
+  default     = 4
 }
 
 variable "app_name" {
@@ -41,13 +55,7 @@ variable "name" {
 variable "project_name" {
   description = "Name of the project"
   type        = string
-  default     = null
-}
-
-variable "instance_count" {
-  description = "Number of instances to create."
-  type        = number
-  default     = 0
+  default     = "edp"
 }
 
 variable "unique_id" {

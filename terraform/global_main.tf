@@ -4,5 +4,8 @@ module "app1" {
   env            = var.env
   co_name        = var.co_name
   vpc_id         = var.vpc_id
-  instance_count = var.applications["app1"].instance_count
+  instance_type          = var.applications["app1"].instance_type
+  asg_min_size           = var.applications["app1"].min_size
+  asg_desired_capacity   = var.applications["app1"].desired_capacity
+  asg_max_size           = var.applications["app1"].max_size
 }

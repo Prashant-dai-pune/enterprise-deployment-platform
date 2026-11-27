@@ -3,6 +3,11 @@ variable "name" {
   type        = string
 }
 
+variable "ami" {
+  description = "AMI ID used by the launch template."
+  type        = string
+}
+
 variable "instance_type" {
   description = "The instance type used by the launch template."
   type        = string

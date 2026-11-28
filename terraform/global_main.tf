@@ -10,3 +10,8 @@ module "app1" {
   asg_desired_capacity = var.applications["app1"].desired_capacity
   asg_max_size         = var.applications["app1"].max_size
 }
+
+module "github_actions" {
+  count  = var.env == "dev" ? 1 : 0
+  source = "./applications/GitHubActions"
+}

@@ -79,6 +79,12 @@ variable "health_check_type" {
   default     = "ELB"
 }
 
+variable "health_check_grace_period" {
+  description = "Time in seconds to wait before checking instance health after launch."
+  type        = number
+  default     = 300
+}
+
 variable "env" {
   description = "Deployment environment name."
   type        = string

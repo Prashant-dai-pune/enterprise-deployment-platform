@@ -39,13 +39,14 @@ resource "aws_launch_template" "this" {
 }
 
 resource "aws_autoscaling_group" "this" {
-  name                = local.resource_name
-  min_size            = var.min_size
-  max_size            = var.max_size
-  desired_capacity    = var.desired_capacity
-  vpc_zone_identifier = local.subnet_ids
-  target_group_arns   = var.target_group_arns
-  health_check_type   = var.health_check_type
+  name                      = local.resource_name
+  min_size                  = var.min_size
+  max_size                  = var.max_size
+  desired_capacity          = var.desired_capacity
+  vpc_zone_identifier       = local.subnet_ids
+  target_group_arns         = var.target_group_arns
+  health_check_type         = var.health_check_type
+  health_check_grace_period = var.health_check_grace_period
 
   launch_template {
     id      = aws_launch_template.this.id
